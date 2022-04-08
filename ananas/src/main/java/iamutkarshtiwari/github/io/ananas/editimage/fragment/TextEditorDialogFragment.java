@@ -102,7 +102,8 @@ public class TextEditorDialogFragment extends DialogFragment {
         addTextEditText.setText(getArguments().getString(EXTRA_INPUT_TEXT));
         colorCode = getArguments().getInt(EXTRA_COLOR_CODE);
         addTextEditText.setTextColor(colorCode);
-        inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+        addTextEditText.requestFocus();
+//         inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
 
         //Make a callback on activity when user is done with text editing
         addTextDoneTv.setOnClickListener(view1 -> {
