@@ -102,6 +102,7 @@ public class TextEditorDialogFragment extends DialogFragment {
         addTextEditText.setText(getArguments().getString(EXTRA_INPUT_TEXT));
         colorCode = getArguments().getInt(EXTRA_COLOR_CODE);
         addTextEditText.setTextColor(colorCode);
+        addTextEditText.setHint("Enter your text");
         addTextEditText.requestFocus();
 //         inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
 
