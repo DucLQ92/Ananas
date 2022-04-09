@@ -13,6 +13,7 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import iamutkarshtiwari.github.io.ananas.R;
 
 public class ColorPickerAdapter extends RecyclerView.Adapter<ColorPickerAdapter.ViewHolder> {
@@ -69,8 +70,11 @@ public class ColorPickerAdapter extends RecyclerView.Adapter<ColorPickerAdapter.
         Resources resources = context.getResources();
         List<Integer> colorList = new ArrayList<>();
         for (int i = 0; i <= 21; i++) {
-            int resourceId = resources.getIdentifier("kelly_" + (i + 1), "color", context.getPackageName());
-            colorList.add(resources.getColor(resourceId));
+            // except gray
+            if (i != 8) {
+                int resourceId = resources.getIdentifier("kelly_" + (i + 1), "color", context.getPackageName());
+                colorList.add(resources.getColor(resourceId));
+            }
         }
         return colorList;
     }
