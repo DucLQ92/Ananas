@@ -1,9 +1,11 @@
 package iamutkarshtiwari.github.io.ananas.editimage.fragment;
 
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import iamutkarshtiwari.github.io.ananas.R;
 import iamutkarshtiwari.github.io.ananas.editimage.ImageEditorIntentBuilder;
@@ -69,6 +71,29 @@ public class MainMenuFragment extends BaseEditFragment implements
         brightnessBtn = mainView.findViewById(R.id.btn_brightness);
         saturationBtn = mainView.findViewById(R.id.btn_contrast);
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int width = displayMetrics.widthPixels;
+
+        ViewGroup.LayoutParams stickerBtnLayoutParams = stickerBtn.getLayoutParams();
+        stickerBtn.setLayoutParams(new LinearLayout.LayoutParams(width / 9 * 2, stickerBtnLayoutParams.height));
+        ViewGroup.LayoutParams filterBtnLayoutParams = filterBtn.getLayoutParams();
+        filterBtn.setLayoutParams(new LinearLayout.LayoutParams(width / 9 * 2, filterBtnLayoutParams.height));
+        ViewGroup.LayoutParams cropBtnLayoutParams = cropBtn.getLayoutParams();
+        cropBtn.setLayoutParams(new LinearLayout.LayoutParams(width / 9 * 2, cropBtnLayoutParams.height));
+        ViewGroup.LayoutParams rotateBtnLayoutParams = rotateBtn.getLayoutParams();
+        rotateBtn.setLayoutParams(new LinearLayout.LayoutParams(width / 9 * 2, rotateBtnLayoutParams.height));
+        ViewGroup.LayoutParams textBtnLayoutParams = stickerBtn.getLayoutParams();
+        textBtn.setLayoutParams(new LinearLayout.LayoutParams(width / 9 * 2, textBtnLayoutParams.height));
+        ViewGroup.LayoutParams paintBtnLayoutParams = paintBtn.getLayoutParams();
+        paintBtn.setLayoutParams(new LinearLayout.LayoutParams(width / 9 * 2, paintBtnLayoutParams.height));
+        ViewGroup.LayoutParams beautyBtnLayoutParams = beautyBtn.getLayoutParams();
+        beautyBtn.setLayoutParams(new LinearLayout.LayoutParams(width / 9 * 2, beautyBtnLayoutParams.height));
+        ViewGroup.LayoutParams brightnessBtnLayoutParams = brightnessBtn.getLayoutParams();
+        brightnessBtn.setLayoutParams(new LinearLayout.LayoutParams(width / 9 * 2, brightnessBtnLayoutParams.height));
+        ViewGroup.LayoutParams saturationBtnLayoutParams = saturationBtn.getLayoutParams();
+        saturationBtn.setLayoutParams(new LinearLayout.LayoutParams(width / 9 * 2, saturationBtnLayoutParams.height));
+
         if (intentBundle.getBoolean(ImageEditorIntentBuilder.STICKER_FEATURE, false)) {
             stickerBtn.setVisibility(View.VISIBLE);
             stickerBtn.setOnClickListener(this);
@@ -131,7 +156,8 @@ public class MainMenuFragment extends BaseEditFragment implements
                                     beautyBtn.setClickable(isClickable);
                                     brightnessBtn.setClickable(isClickable);
                                     saturationBtn.setClickable(isClickable);
-                                }, error -> { }
+                                }, error -> {
+                                }
                         )
         );
     }

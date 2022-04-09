@@ -6,11 +6,11 @@ apply plugin: 'kotlin-kapt'
 group='com.github.iamutkarshtiwari'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion 32
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion 21
+        targetSdkVersion 32
         versionCode 1
         versionName "1.0"
     }

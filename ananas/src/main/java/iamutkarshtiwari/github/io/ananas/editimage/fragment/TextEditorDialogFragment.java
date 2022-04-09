@@ -23,6 +23,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import iamutkarshtiwari.github.io.ananas.R;
 import iamutkarshtiwari.github.io.ananas.editimage.adapter.ColorPickerAdapter;
 import iamutkarshtiwari.github.io.ananas.editimage.interfaces.OnTextEditorListener;
@@ -104,7 +105,7 @@ public class TextEditorDialogFragment extends DialogFragment {
         addTextEditText.setTextColor(colorCode);
         addTextEditText.setHint("Enter your text");
         addTextEditText.requestFocus();
-//         inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+        inputMethodManager.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
 
         //Make a callback on activity when user is done with text editing
         addTextDoneTv.setOnClickListener(view1 -> {
